@@ -25,7 +25,7 @@ export default defineConfig({
         items: [
           { text: '新用户必看', link: '/guide/' },
           { text: '注册与登录', link: '/guide/register' },
-          { text: '兑换码充值', link: '/guide/redeem' },
+          { text: '购买与充值', link: '/guide/redeem' },
           { text: '创建 API Key', link: '/guide/api-key' },
         ],
       },
