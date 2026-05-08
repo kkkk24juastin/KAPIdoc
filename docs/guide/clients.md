@@ -15,7 +15,7 @@
 5. 填写配置信息：
    - **服务商名称**：填一个你好识别的名字，如「小K的AI小站」
    - **服务商类型**：根据你要使用的模型分组选择对应类型：
-     - **Codex 分组**（GPT 系列模型）→ 选择 `OpenAI`
+     - **Codex 分组**（GPT 系列模型）→ 选择 `OpenAI Response`
      - **Claude 分组**（Claude 系列模型）→ 选择 `Anthropic`
      - **Gemini 分组**（Gemini 系列模型）→ 选择 `Google Gemini`
 6. 配置 API 地址（最关键的一步）：
