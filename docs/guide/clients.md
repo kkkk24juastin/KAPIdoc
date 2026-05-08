@@ -2,9 +2,9 @@
 
 本站同时支持 OpenAI、Claude、Gemini 三种 API 格式，适配各类主流客户端。以下是各客户端的配置方法。
 
-## Cherry Studio
+## Cherry Studio（对话客户端）
 
-[Cherry Studio](https://cherry-ai.com) 是一款开源免费的桌面 AI 客户端，支持 Windows、macOS、Linux 三平台。
+[Cherry Studio](https://cherry-ai.com) 是一款开源免费的桌面 AI 客户端，支持 Windows、macOS、Linux 三平台，适合日常对话、写作、翻译等场景。
 
 ### 配置步骤
 
@@ -14,13 +14,20 @@
 4. 在左侧服务商列表底部，点击「添加」按钮添加自定义服务商
 5. 填写配置信息：
    - **服务商名称**：填一个你好识别的名字，如「小K的AI小站」
-   - **服务商类型**：选择 `OpenAI`
+   - **服务商类型**：根据你要使用的模型分组选择对应类型：
+     - **Codex 分组**（GPT 系列模型）→ 选择 `OpenAI`
+     - **Claude 分组**（Claude 系列模型）→ 选择 `Anthropic`
+     - **Gemini 分组**（Gemini 系列模型）→ 选择 `Google Gemini`
 6. 配置 API 地址（最关键的一步）：
    - **API 地址** 填写：`https://api.kkkk24juastin.asia`
-   - 只填根地址，Cherry Studio 会自动拼接 `/v1/chat/completions`
+   - 只填根地址，Cherry Studio 会自动拼接对应路径
 7. 在 **API Key** 输入框中粘贴你的 Key（`sk-` 开头）
 8. 点击「管理」或「添加」按钮，添加你想使用的模型
 9. 打开右上角的服务商启用开关
+
+::: tip 多分组使用
+如果你需要同时使用不同分组的模型（如 GPT 和 Claude），可以添加多个服务商，每个服务商选择对应的类型，API Key 填同一个即可。
+:::
 
 ::: tip 验证连接
 配置完成后，点击 API Key 旁边的「Check」按钮测试连通性。如果提示连接成功，说明配置正确。
@@ -28,108 +35,13 @@
 
 ---
 
-## Lobe Chat
+## Claude Code（编程 Agent）
 
-[LobeChat](https://lobechat.com) 是一个开源的聊天 UI 框架，支持 Web 和桌面两种形式。
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) 是 Anthropic 官方的命令行 AI 编程助手，适合代码编写、项目理解、自动化任务等场景。本站原生支持 Claude API 格式，可直接配置使用。
 
-### 方式一：网页端手动配置
+### 方式一：环境变量配置
 
-1. 打开 LobeChat，点击左下角齿轮图标 → 「语言模型」
-2. 选择 `OpenAI` 服务商
-3. 填写配置：
-   - **API Key**：粘贴你的 Key（`sk-` 开头）
-   - **API 代理地址**：`https://api.kkkk24juastin.asia/v1`
-   - 开启「使用自定义 API 代理地址」
-4. 在「自定义模型名称」中添加你需要的模型 ID
-5. 保存后即可在对话中选择模型使用
-
-### 方式二：Docker 自部署
-
-如果你通过 Docker 部署 LobeChat，可以在 `docker-compose.yml` 中配置环境变量：
-
-```yaml
-version: '3.8'
-services:
-  lobe-chat:
-    image: lobehub/lobe-chat:latest
-    ports:
-      - "3210:3210"
-    environment:
-      - OPENAI_API_KEY=sk-你的API密钥
-      - OPENAI_PROXY_URL=https://api.kkkk24juastin.asia/v1
-      - OPENAI_MODEL_LIST=gpt-4o,gpt-4o-mini,claude-sonnet-4-20250514,deepseek-chat
-    restart: unless-stopped
-```
-
-::: warning 注意
-`OPENAI_PROXY_URL` 末尾不要加斜杠 `/`，否则会导致请求路径错误（如 `/v1//chat/completions`）。
-:::
-
----
-
-## ChatBox
-
-[ChatBox](https://chatboxai.app) 是一款全平台 AI 客户端，支持 Windows、macOS、Linux、iOS 和 Android。
-
-### 配置步骤
-
-1. 下载并安装 ChatBox
-2. 打开 ChatBox，点击左下角「设置」图标（齿轮图标）
-3. 进入「模型」或「API Provider」设置
-4. 点击「添加 Provider」或底部的「添加」按钮
-5. 选择「OpenAI API 兼容」或「Custom」类型
-6. 填写配置信息：
-
-| 配置项 | 填写内容 |
-|--------|----------|
-| API 提供方名称 | 小K的AI小站 |
-| API Host | `https://api.kkkk24juastin.asia` |
-| API Key | `sk-你的API密钥` |
-| API 路径 | 保持默认 `/v1/chat/completions` |
-
-7. 添加模型：点击「添加模型」，输入模型名称（如 `gpt-4o`）
-8. 保存后点击「检查」按钮验证连接
-9. 返回首页，创建新对话即可使用
-
----
-
-## NextChat
-
-[NextChat](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web)（原 ChatGPT-Next-Web）是一个轻量级的 ChatGPT 网页客户端。
-
-### 方式一：网页端手动配置
-
-1. 打开 NextChat 页面，点击左下角「设置」
-2. 在「接口地址」中填入：`https://api.kkkk24juastin.asia`
-3. 在「API Key」中填入你的 Key（`sk-` 开头）
-4. 保存设置即可使用
-
-### 方式二：Docker 自部署
-
-通过环境变量配置：
-
-```yaml
-version: '3.8'
-services:
-  nextchat:
-    image: yidadaa/chatgpt-next-web
-    ports:
-      - "3000:3000"
-    environment:
-      - OPENAI_API_KEY=sk-你的API密钥
-      - BASE_URL=https://api.kkkk24juastin.asia
-    restart: unless-stopped
-```
-
----
-
-## Claude Code
-
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code) 是 Anthropic 官方的命令行 AI 编程助手。本站原生支持 Claude API 格式，可直接配置使用。
-
-### 配置方式
-
-Claude Code 通过环境变量配置自定义 API 端点。在终端中设置以下环境变量：
+在终端中设置以下环境变量：
 
 ```bash
 export ANTHROPIC_BASE_URL=https://api.kkkk24juastin.asia
@@ -148,6 +60,145 @@ export ANTHROPIC_AUTH_TOKEN=sk-你的API密钥
 ```
 
 配置完成后，在终端中运行 `claude` 即可使用。
+
+### 方式二：使用 CC-Switch 一键配置（推荐）
+
+详见下方 [CC-Switch 使用教程](#cc-switch-一键配置工具)。
+
+---
+
+## Codex（编程 Agent）
+
+[Codex](https://github.com/openai/codex) 是 OpenAI 官方的命令行编程 Agent，支持代码生成、调试、重构等任务。
+
+### 方式一：环境变量配置（快速上手）
+
+```bash
+export OPENAI_API_KEY=sk-你的API密钥
+export OPENAI_BASE_URL=https://api.kkkk24juastin.asia/v1
+codex
+```
+
+### 方式二：config.toml 配置（推荐）
+
+编辑 `~/.codex/config.toml`，添加自定义 Provider：
+
+```toml
+model = "gpt-4o"
+model_provider = "kai"
+
+[model_providers.kai]
+name = "小K的AI小站"
+base_url = "https://api.kkkk24juastin.asia/v1"
+env_key = "OPENAI_API_KEY"
+```
+
+然后设置环境变量并启动：
+
+```bash
+export OPENAI_API_KEY=sk-你的API密钥
+codex
+```
+
+### 多 Provider 切换
+
+可以注册多个 Provider，通过命令行临时切换：
+
+```toml
+model_provider = "kai"   # 默认使用
+
+[model_providers.kai]
+name = "小K的AI小站"
+base_url = "https://api.kkkk24juastin.asia/v1"
+env_key = "OPENAI_API_KEY"
+
+[model_providers.openai]
+name = "OpenAI 官方"
+base_url = "https://api.openai.com/v1"
+env_key = "OPENAI_API_KEY"
+```
+
+```bash
+# 使用默认 Provider
+codex "写一个快排"
+
+# 临时切换到 OpenAI 官方
+codex --provider openai "写一个快排"
+```
+
+### 方式三：使用 CC-Switch 一键配置（推荐）
+
+详见下方 [CC-Switch 使用教程](#cc-switch-一键配置工具)。
+
+---
+
+## Gemini CLI（编程 Agent）
+
+[Gemini CLI](https://github.com/google-gemini/gemini-cli) 是 Google 官方的命令行 AI 工具，支持代码生成、文件操作、Shell 命令执行等。
+
+### 环境变量配置
+
+```bash
+export GEMINI_API_KEY=sk-你的API密钥
+export GEMINI_API_BASE_URL=https://api.kkkk24juastin.asia
+gemini
+```
+
+将配置持久化到 `~/.gemini/.env` 文件中：
+
+```bash
+GEMINI_API_KEY=sk-你的API密钥
+GEMINI_API_BASE_URL=https://api.kkkk24juastin.asia
+```
+
+配置完成后，在终端中运行 `gemini` 即可使用。
+
+### 方式二：使用 CC-Switch 一键配置（推荐）
+
+详见下方 [CC-Switch 使用教程](#cc-switch-一键配置工具)。
+
+---
+
+## CC-Switch 一键配置工具
+
+[CC-Switch](https://github.com/farion1231/cc-switch) 是一款开源的跨平台桌面应用，可以一键管理 Claude Code、Codex、Gemini CLI 等多个 Agent 工具的 API 配置，无需手动编辑配置文件。
+
+### 安装
+
+从 [GitHub Release](https://github.com/farion1231/cc-switch/releases) 页面下载对应平台的安装包：
+
+- **Windows**：下载 `.exe` 安装包
+- **macOS**：下载 `.dmg` 安装包，或使用 Homebrew：`brew install --cask cc-switch`
+- **Linux**：下载 `.deb`、`.rpm` 或 `.AppImage`
+
+### 配置步骤
+
+**第一步：添加供应商**
+
+1. 打开 CC-Switch，在顶部分组栏选择你要配置的工具（如 `Claude`、`Codex`、`Gemini`）
+2. 点击右侧的 `+` 按钮
+3. 选择「自定义供应商」或从预设列表中选择
+4. 填写配置信息：
+   - **供应商名称**：小K的AI小站
+   - **API 请求地址**：`https://api.kkkk24juastin.asia`
+   - **API Key**：`sk-你的API密钥`
+5. 点击「添加」保存
+
+**第二步：启用配置**
+
+添加成功后，在主界面会看到刚才配置的项目，点击右侧的「启用」按钮，状态变为「使用中」即可。
+
+**第三步：验证**
+
+- **Claude Code**：重启终端后运行 `claude`，发送消息测试
+- **Codex**：重启终端后运行 `codex`，发送消息测试
+- **Gemini CLI**：运行 `gemini`，发送消息测试
+
+### 进阶功能
+
+- **用量追踪**：在模型列表点击「配置用量查询」，可实时查看 API 余额
+- **速度测试**：点击供应商卡片上的测速按钮，自动测试 API 延迟
+- **本地代理故障转移**：在「设置」→「路由服务」中开启，支持多供应商自动切换
 
 ---
 
