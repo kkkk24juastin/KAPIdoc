@@ -1,5 +1,11 @@
 # 常见问题
 
+## 售后支持
+
+如遇到充值、账号、API 调用或线路问题，请加入售后QQ群：`1006226940`，并尽量提供账号、请求时间、错误信息和使用的线路。
+
+请勿在群内发送完整 API Key；如需排查鉴权问题，只提供脱敏后的信息。
+
 ## 余额充值不到账怎么办
 
 ### 在线充值不到账
@@ -58,8 +64,9 @@ curl https://api.kkkk24juastin.asia/v1/models \
 
 确认你填写的 API 地址正确：
 - 正确：`https://api.kkkk24juastin.asia` 或 `https://api.kkkk24juastin.asia/v1`
-- 错误：`http://api.kkkk24juastin.asia`（缺少 https）
-- 错误：`https://api.kkkk24juastin.asia/v1/chat/completions`（不需要完整路径）
+- 正确：`https://api.943827561.xyz` 或 `https://api.943827561.xyz/v1`
+- 错误：使用 `http://`（缺少 https）
+- 错误：`https://api.kkkk24juastin.asia/v1/chat/completions`（不需要把完整接口路径填入 Base URL）
 
 ### 2. 检查 API Key
 
@@ -69,7 +76,7 @@ curl https://api.kkkk24juastin.asia/v1/models \
 
 ### 3. 检查网络连接
 
-- 确认你的网络可以正常访问 `api.kkkk24juastin.asia`
+- 确认你的网络可以正常访问当前使用的 API 域名
 - 如果使用代理，确认代理设置正确
 - 尝试在浏览器中直接访问 API 地址，看是否能正常响应
 
@@ -95,16 +102,16 @@ API 返回的错误信息通常包含具体原因：
 
 | 客户端 | base_url 填写 |
 |--------|---------------|
-| **通用** | `https://api.kkkk24juastin.asia` |
-| **Cherry Studio** | `https://api.kkkk24juastin.asia`（只填根地址） |
-| **Lobe Chat** | `https://api.kkkk24juastin.asia/v1`（需要 `/v1`） |
-| **ChatBox** | API Host 填 `https://api.kkkk24juastin.asia` |
-| **NextChat** | `https://api.kkkk24juastin.asia` |
-| **Python SDK** | `https://api.kkkk24juastin.asia/v1` |
-| **Claude Code** | `https://api.kkkk24juastin.asia` |
+| **通用** | `https://api.kkkk24juastin.asia` 或 `https://api.943827561.xyz` |
+| **Cherry Studio** | 任一线路根地址（只填根地址） |
+| **Lobe Chat** | 任一线路加 `/v1` |
+| **ChatBox** | API Host 填任一线路根地址 |
+| **NextChat** | 任一线路根地址 |
+| **Python SDK** | 任一线路加 `/v1` |
+| **Claude Code** | 任一线路根地址 |
 
 ::: tip 简单判断规则
 - 如果客户端会自动拼接 `/v1/chat/completions`，则只填根地址
-- 如果客户端不自动拼接路径，则填 `https://api.kkkk24juastin.asia/v1`
+- 如果客户端不自动拼接路径，则在当前线路域名后加 `/v1`
 - 如果不确定，两种都试试，哪个能用就用哪个
 :::

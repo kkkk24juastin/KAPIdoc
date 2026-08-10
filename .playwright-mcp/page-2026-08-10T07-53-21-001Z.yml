@@ -1,0 +1,48 @@
+- generic [ref=f51e2]:
+  - generic [ref=f51e5]:
+    - link [ref=f51e6] [cursor=pointer]:
+      - /url: /
+      - img "徽标" [ref=f51e8]
+      - heading "小K的AI站点" [level=1] [ref=f51e9]
+    - generic [ref=f51e12]:
+      - generic [ref=f51e13]:
+        - heading "登录" [level=2] [ref=f51e14]
+        - paragraph [ref=f51e15]:
+          - text: 没有账号？
+          - link "注册" [ref=f51e16] [cursor=pointer]:
+            - /url: /sign-up
+          - text: .
+      - generic [ref=f51e17]:
+        - generic [ref=f51e18]:
+          - generic [ref=f51e19]: 用户名或电子邮件
+          - textbox "用户名或电子邮件" [ref=f51e20]:
+            - /placeholder: 输入您的用户名或电子邮件
+        - generic [ref=f51e21]:
+          - generic [ref=f51e22]: 密码
+          - generic [ref=f51e23]:
+            - textbox "密码" [ref=f51e24]:
+              - /placeholder: 输入密码
+            - button "Toggle password visibility" [ref=f51e25] [cursor=pointer]
+          - link "忘记密码？" [ref=f51e26] [cursor=pointer]:
+            - /url: /forgot-password
+        - button "登录" [disabled]
+        - generic [ref=f51e30]:
+          - checkbox "我已阅读并同意 用户协议 and the 隐私政策." [ref=f51e31]
+          - checkbox [ref=f51e32]
+          - generic [ref=f51e34]:
+            - text: 我已阅读并同意
+            - link "用户协议" [ref=f51e35] [cursor=pointer]:
+              - /url: /user-agreement
+            - text: and the
+            - link "隐私政策" [ref=f51e36] [cursor=pointer]:
+              - /url: /privacy-policy
+            - text: .
+      - paragraph [ref=f51e37]:
+        - text: By clicking sign in, you agree to our
+        - link "User Agreement" [ref=f51e38] [cursor=pointer]:
+          - /url: /user-agreement
+        - text: 和
+        - link "Privacy Policy" [ref=f51e39] [cursor=pointer]:
+          - /url: /privacy-policy
+        - text: .
+  - region "Notifications alt+T"

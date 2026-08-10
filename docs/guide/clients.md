@@ -13,13 +13,14 @@
 3. 进入「模型服务」设置页面
 4. 在左侧服务商列表底部，点击「添加」按钮添加自定义服务商
 5. 填写配置信息：
-   - **服务商名称**：填一个你好识别的名字，如「小K的AI小站」
+   - **服务商名称**：填一个容易识别的名字，如「小K的AI站点」
    - **服务商类型**：根据你要使用的模型分组选择对应类型：
      - **Codex 分组**（GPT 系列模型）→ 选择 `OpenAI Response`
      - **Claude 分组**（Claude 系列模型）→ 选择 `Anthropic`
      - **Gemini 分组**（Gemini 系列模型）→ 选择 `Google Gemini`
 6. 配置 API 地址（最关键的一步）：
    - **API 地址** 填写：`https://api.kkkk24juastin.asia`
+   - 如果 CN2 线路访问不稳定，也可以改用直连线路：`https://api.943827561.xyz`
    - 只填根地址，Cherry Studio 会自动拼接对应路径
 7. 在 **API Key** 输入框中粘贴你的 Key（`sk-` 开头）
 8. 点击「管理」或「添加」按钮，添加你想使用的模型
@@ -88,7 +89,7 @@ model = "gpt-4o"
 model_provider = "kai"
 
 [model_providers.kai]
-name = "小K的AI小站"
+name = "小K的AI站点"
 base_url = "https://api.kkkk24juastin.asia/v1"
 env_key = "OPENAI_API_KEY"
 ```
@@ -108,7 +109,7 @@ codex
 model_provider = "kai"   # 默认使用
 
 [model_providers.kai]
-name = "小K的AI小站"
+name = "小K的AI站点"
 base_url = "https://api.kkkk24juastin.asia/v1"
 env_key = "OPENAI_API_KEY"
 
@@ -177,10 +178,11 @@ GEMINI_API_BASE_URL=https://api.kkkk24juastin.asia
 
 1. 打开 CC-Switch，在顶部分组栏选择你要配置的工具（如 `Claude`、`Codex`、`Gemini`）
 2. 点击右侧的 `+` 按钮
-3. 选择「自定义供应商」或从预设列表中选择
+3. 选择「自定义供应商」。预设列表中没有 小K的AI站点
 4. 填写配置信息：
-   - **供应商名称**：小K的AI小站
+   - **供应商名称**：小K的AI站点
    - **API 请求地址**：`https://api.kkkk24juastin.asia`
+   - 直连线路地址：`https://api.943827561.xyz`
    - **API Key**：`sk-你的API密钥`
 5. 点击「添加」保存
 
@@ -206,7 +208,7 @@ GEMINI_API_BASE_URL=https://api.kkkk24juastin.asia
 
 由于本站兼容 OpenAI API 格式，任何支持自定义 OpenAI API 端点的软件都可以使用。配置时只需注意以下两点：
 
-1. **API Base URL / 端点地址**：填 `https://api.kkkk24juastin.asia` 或 `https://api.kkkk24juastin.asia/v1`（根据软件要求）
+1. **API Base URL / 端点地址**：填 `https://api.kkkk24juastin.asia` 或 `https://api.943827561.xyz`；如果软件要求 `/v1`，在对应域名后追加 `/v1`
 2. **API Key**：填你的 `sk-` 开头的密钥
 
 常见支持 OpenAI API 的软件包括：

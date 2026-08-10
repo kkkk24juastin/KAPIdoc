@@ -4,6 +4,8 @@
 
 ## API Base 地址
 
+本站提供两条线路，下面以 CN2 线路为默认示例。直连线路只需将域名替换为 `https://api.943827561.xyz`，接口路径保持不变。
+
 | API 格式 | Base URL |
 |----------|----------|
 | **OpenAI 兼容** | `https://api.kkkk24juastin.asia/v1` |

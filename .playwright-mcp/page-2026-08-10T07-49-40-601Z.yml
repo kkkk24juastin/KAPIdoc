@@ -1,0 +1,58 @@
+- generic [ref=e2]:
+  - generic [ref=e41]:
+    - link [ref=e42] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=e44]
+      - heading "小K的AI站点" [level=1] [ref=e45]
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - heading "Create an account" [level=2] [ref=e50]
+        - paragraph [ref=e51]:
+          - text: Already have an account?
+          - link "Sign in" [ref=e52] [cursor=pointer]:
+            - /url: /sign-in
+          - text: .
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: Username
+          - textbox "Username" [ref=e56]:
+            - /placeholder: Enter your username
+        - generic [ref=e57]:
+          - generic [ref=e58]: Password
+          - generic [ref=e59]:
+            - textbox "Password" [ref=e60]:
+              - /placeholder: Enter password (8-20 characters)
+            - button "Toggle password visibility" [ref=e61] [cursor=pointer]
+        - generic [ref=e62]:
+          - generic [ref=e63]: Confirm password
+          - generic [ref=e64]:
+            - textbox "Confirm password" [ref=e65]
+            - button "Toggle password visibility" [ref=e66] [cursor=pointer]
+        - generic [ref=e67]:
+          - generic [ref=e68]: Email (required for verification)
+          - textbox "Email (required for verification)" [ref=e69]:
+            - /placeholder: name@example.com
+        - generic [ref=e70]:
+          - textbox "Verification code" [ref=e72]
+          - button "Send code" [disabled]
+        - generic [ref=e76]:
+          - checkbox "I have read and agree to the User Agreement and the Privacy Policy." [ref=e77]
+          - checkbox [ref=e78]
+          - generic [ref=e80]:
+            - text: I have read and agree to the
+            - link "User Agreement" [ref=e81] [cursor=pointer]:
+              - /url: /user-agreement
+            - text: and the
+            - link "Privacy Policy" [ref=e82] [cursor=pointer]:
+              - /url: /privacy-policy
+            - text: .
+        - button "Create account" [disabled]
+      - paragraph [ref=e83]:
+        - text: By creating an account, you agree to our
+        - link "User Agreement" [ref=e84] [cursor=pointer]:
+          - /url: /user-agreement
+        - text: and
+        - link "Privacy Policy" [ref=e85] [cursor=pointer]:
+          - /url: /privacy-policy
+        - text: .
+  - region "Notifications alt+T"

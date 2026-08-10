@@ -6,6 +6,8 @@
 
 > [https://api.kkkk24juastin.asia](https://api.kkkk24juastin.asia)
 
+如果 CN2 线路访问不稳定，也可以使用直连线路：<https://api.943827561.xyz>。
+
 ## 注册账号
 
 1. 打开使用站点后，点击页面上的「注册」按钮

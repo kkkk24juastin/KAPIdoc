@@ -1,0 +1,46 @@
+- generic [ref=f24e2]:
+  - generic [ref=f24e6]:
+    - link [ref=f24e7] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f24e13]:
+      - generic [ref=f24e14]:
+        - heading "Sign in" [level=2] [ref=f24e15]
+        - paragraph [ref=f24e16]:
+          - text: Don't have an account?
+          - link "Sign up" [ref=f24e17] [cursor=pointer]:
+            - /url: /sign-up
+          - text: .
+      - generic [ref=f24e18]:
+        - generic [ref=f24e19]:
+          - generic [ref=f24e20]: Username or Email
+          - textbox "Username or Email" [ref=f24e21]:
+            - /placeholder: Enter your username or email
+        - generic [ref=f24e22]:
+          - generic [ref=f24e23]: Password
+          - generic [ref=f24e24]:
+            - textbox "Password" [ref=f24e25]:
+              - /placeholder: Enter password
+            - button "Toggle password visibility" [ref=f24e26] [cursor=pointer]
+          - link "Forgot password?" [ref=f24e27] [cursor=pointer]:
+            - /url: /forgot-password
+        - button "Sign in" [disabled]
+        - generic [ref=f24e28]:
+          - checkbox "I have read and agree to the User Agreement and the Privacy Policy." [ref=f24e29]
+          - checkbox [ref=f24e30]
+          - generic [ref=f24e32]:
+            - text: I have read and agree to the
+            - link "User Agreement" [ref=f24e33] [cursor=pointer]:
+              - /url: /user-agreement
+            - text: and the
+            - link "Privacy Policy" [ref=f24e34] [cursor=pointer]:
+              - /url: /privacy-policy
+            - text: .
+      - paragraph [ref=f24e35]:
+        - text: By clicking sign in, you agree to our
+        - link "User Agreement" [ref=f24e36] [cursor=pointer]:
+          - /url: /user-agreement
+        - text: and
+        - link "Privacy Policy" [ref=f24e37] [cursor=pointer]:
+          - /url: /privacy-policy
+        - text: .
+  - region "Notifications alt+T"

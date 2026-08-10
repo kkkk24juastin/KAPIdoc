@@ -1,6 +1,8 @@
 node_modules/
 docs/.vitepress/cache/
+docs/.vitepress/.temp/
 docs/.vitepress/dist/
 .DS_Store
 *.log
 .ace-tool/
+example
